@@ -17,24 +17,13 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 Route::get('user/{name}/{id}', function ($name,$id) {
-    //DB::insert('insert into Persons (userID, userName) values (?, ?)', [$id, $name]);
-        
-    //echo $name;
-    
     try {
            $users = DB::table('user')->get(); 
-        //$result =  DB::select('select userName from Persons where userID = 123');
-       // $con = mysql_connect("localhost","root","!((@!))$@lmp");
     } catch (Exception $e) {
         echo 'Caught exception: ',  $e->getMessage(), "\n";
-    }
-    
-    //echo $users;
-    
+    }  
     $result =  DB::select('select * from user where id = ?',[$id]);
     return $result;
-    //return (string)($name).(string)($id);
-    //return getenv('APP_ENV');
 });
 Route::get('show', 'UserController@show');
 Route::get('login', 'UserController@login');

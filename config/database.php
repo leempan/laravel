@@ -54,10 +54,10 @@ return [
 
 		'mysql' => [
 			'driver'    => 'mysql',
-			'host'      => env('DB_HOST', '10.180.29.70'),
-			'database'  => env('DB_DATABASE', 'dressup'),
-			'username'  => env('DB_USERNAME', 'root'),
-			'password'  => env('DB_PASSWORD', '123456'),
+			'host'      => env('DB_HOST', '121.40.72.141'),
+			'database'  => env('DB_DATABASE', 'dianping'),
+			'username'  => env('DB_USERNAME', 'dianping'),
+			'password'  => env('DB_PASSWORD', 'hwUR7UYYhtvszhAF'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

@@ -34,6 +34,10 @@
 
 			.quote {
 				font-size: 24px;
+				margin-bottom: 24px;
+			}
+			.time{
+				font-size: 96px;				
 			}
 		</style>
 	</head>
@@ -42,7 +46,9 @@
 			<div class="content">
 				<div class="title">Laravel 5</div>
 				<div class="quote">{{ Inspiring::quote() }}</div>
+				<div calss="time">{{ Inspiring::getTime() }}</div>
 			</div>
 		</div>
 	</body>
+	
 </html>

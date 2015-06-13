@@ -27,5 +27,8 @@ class UserController extends Controller {
         echo "2";
         return $result;
     }
+    function register(){
+        
+    }
 
 }

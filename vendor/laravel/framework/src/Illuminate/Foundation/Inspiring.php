@@ -24,5 +24,8 @@ class Inspiring {
 
 		])->random();
 	}
-
+	public static function getTime()
+	{
+		return date('H:i:s,jS F Y');
+	}
 }
