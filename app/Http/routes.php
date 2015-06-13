@@ -10,7 +10,6 @@
 |
 */
 Route::get('/', 'WelcomeController@index');
-Route::get('lmq', function(){return "梁明强是个大煞笔";});
 Route::get('home', 'HomeController@index');
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -18,7 +17,7 @@ Route::controllers([
 ]);
 Route::get('user/{name}/{id}', function ($name,$id) {
     try {
-           $users = DB::table('user')->get(); 
+           $users = DB::table('users')->get(); 
     } catch (Exception $e) {
         echo 'Caught exception: ',  $e->getMessage(), "\n";
     }  
