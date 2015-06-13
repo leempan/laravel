@@ -15,14 +15,19 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+
+
 Route::get('user/{name}/{id}', function ($name,$id) {
     try {
            $users = DB::table('users')->get(); 
     } catch (Exception $e) {
         echo 'Caught exception: ',  $e->getMessage(), "\n";
     }  
-    $result =  DB::select('select * from user where id = ?',[$id]);
+    $result =  DB::select('select * from users where cellphone = ?',[$id]);
     return $result;
 });
+
 Route::get('show', 'UserController@show');
+
 Route::get('login', 'UserController@login');
