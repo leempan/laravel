@@ -24,7 +24,7 @@ Route::get('user/{name}/{id}', function ($name,$id) {
     } catch (Exception $e) {
         echo 'Caught exception: ',  $e->getMessage(), "\n";
     }  
-    $result =  DB::select('select * from users where cellphone = ?',[$id]);
+    $result =  DB::select('select * from users');
     return $result;
 });
 

@@ -39,9 +39,9 @@ trait ResetsPasswords {
 	 */
 	public function postEmail(Request $request)
 	{
-		$this->validate($request, ['email' => 'required|email']);
+		$this->validate($request, ['cellphone' => 'required|max:11|min:11|between:[1300000000,1899999999]']);
 
-		$response = $this->passwords->sendResetLink($request->only('email'), function($m)
+		$response = $this->passwords->sendResetLink($request->only('cellphone'), function($m)
 		{
 			$m->subject($this->getEmailSubject());
 		});
@@ -52,7 +52,7 @@ trait ResetsPasswords {
 				return redirect()->back()->with('status', trans($response));
 
 			case PasswordBroker::INVALID_USER:
-				return redirect()->back()->withErrors(['email' => trans($response)]);
+				return redirect()->back()->withErrors(['cellphone' => trans($response)]);
 		}
 	}
 
@@ -92,12 +92,12 @@ trait ResetsPasswords {
 	{
 		$this->validate($request, [
 			'token' => 'required',
-			'email' => 'required|email',
+			'cellphone' => 'required|max:11|min:11|between:[1300000000,1899999999]',
 			'password' => 'required|confirmed',
 		]);
 
 		$credentials = $request->only(
-			'email', 'password', 'password_confirmation', 'token'
+			'cellphone', 'password', 'password_confirmation', 'token'
 		);
 
 		$response = $this->passwords->reset($credentials, function($user, $password)
@@ -116,8 +116,8 @@ trait ResetsPasswords {
 
 			default:
 				return redirect()->back()
-							->withInput($request->only('email'))
-							->withErrors(['email' => trans($response)]);
+							->withInput($request->only('cellphone'))
+							->withErrors(['cellphone' => trans($response)]);
 		}
 	}
 

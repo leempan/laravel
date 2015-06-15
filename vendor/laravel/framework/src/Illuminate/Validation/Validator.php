@@ -884,6 +884,7 @@ class Validator implements ValidatorContract {
 	 */
 	protected function validateDigitsBetween($attribute, $value, $parameters)
 	{
+		echo $value;
 		$this->requireParameterCount(2, $parameters, 'digits_between');
 
 		$length = strlen((string) $value);

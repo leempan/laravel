@@ -2084,12 +2084,12 @@ trait AuthenticatesAndRegistersUsers
     }
     public function postLogin(Request $request)
     {
-        $this->validate($request, array('email' => 'required|email', 'password' => 'required'));
-        $credentials = $request->only('email', 'password');
+        $this->validate($request, array('cellphone' => 'required|max:11|min:11|between:[1300000000,1899999999]', 'password' => 'required'));
+        $credentials = $request->only('cellphone', 'password');
         if ($this->auth->attempt($credentials, $request->has('remember'))) {
             return redirect()->intended($this->redirectPath());
         }
-        return redirect($this->loginPath())->withInput($request->only('email', 'remember'))->withErrors(array('email' => $this->getFailedLoginMessage()));
+        return redirect($this->loginPath())->withInput($request->only('cellphone', 'remember'))->withErrors(array('cellphone' => $this->getFailedLoginMessage()));
     }
     protected function getFailedLoginMessage()
     {
@@ -13072,7 +13072,8 @@ class LineFormatter extends NormalizerFormatter
             return $str;
         }
         return strtr($str, array('
-' => ' ', '' => ' ', '
+' => ' ', '
+' => ' ', '
 ' => ' '));
     }
 }
