@@ -29,5 +29,3 @@ Route::get('user/{name}/{id}', function ($name,$id) {
 });
 
 Route::get('show', 'UserController@show');
-
-Route::get('login', 'UserController@login');
