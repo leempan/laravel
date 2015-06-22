@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'CreateItemsTable' => $baseDir . '/database/migrations/2015_06_20_161524_CreateItemsTable.php',
     'CreateStoreTable' => $baseDir . '/database/migrations/2015_06_20_140705_createStoreTable.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2015_06_15_132549_createUsersTable.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
@@ -388,6 +389,7 @@ return array(
     'PHP_Token_WHITESPACE' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_XOR_EQUAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+    'Rollback' => $baseDir . '/database/migrations/2015_06_20_212532_rollback.php',
     'SebastianBergmann\\Comparator\\ArrayComparator' => $vendorDir . '/sebastian/comparator/src/ArrayComparator.php',
     'SebastianBergmann\\Comparator\\Comparator' => $vendorDir . '/sebastian/comparator/src/Comparator.php',
     'SebastianBergmann\\Comparator\\ComparisonFailure' => $vendorDir . '/sebastian/comparator/src/ComparisonFailure.php',
@@ -426,6 +428,8 @@ return array(
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/Text/Template.php',
+    'UpdateItemTable' => $baseDir . '/database/migrations/2015_06_20_212920_updateItemTable.php',
+    'UpdateItemsTable' => $baseDir . '/database/migrations/2015_06_20_162816_UpdateItemsTable.php',
     'UpdateStoreTable' => $baseDir . '/database/migrations/2015_06_20_143952_updateStoreTable.php',
     'UpdateUserTable' => $baseDir . '/database/migrations/2015_06_16_220105_updateUserTable.php',
 );

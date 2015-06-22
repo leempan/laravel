@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateUserTable extends Migration {
+class Rollback extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,9 @@ class UpdateUserTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('users', function($table)
+		Schema::table('items', function($table)
 		{
-   			 $table->string('remember_token',62)->default('default');
+    		$table->dropColumn('itemdtail');
 		});
 	}
 
@@ -25,10 +25,7 @@ class UpdateUserTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('users', function($table)
-		{
-    		$table->dropColumn('remember_token');
-		});
+		//
 	}
 
 }

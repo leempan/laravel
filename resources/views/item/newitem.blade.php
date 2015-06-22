@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">Register</div>
+				<div class="panel-heading">添加商品</div>
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
@@ -18,45 +18,39 @@
 						</div>
 					@endif
 
-					<form class="form-horizontal" role="form" method='POST' action="{{ url('/auth/register') }}">
+					<form class="form-horizontal" role="form" method="POST" action="{{ url('/newitem') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<div class="form-group">
-							<label class="col-md-4 control-label">Name</label>
+							<label class="col-md-4 control-label">商品名称</label>
 							<div class="col-md-6">
 								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-md-4 control-label">Cellphone Number</label>
+							<label class="col-md-4 control-label">商品价格</label>
 							<div class="col-md-6">
-								<input type="tel" class="form-control" name="cellphone" value="{{ old('cellphone') }}">
+								<input type="text" class="form-control" name="price" value="{{ old('price') }}">
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-md-4 control-label">Email Address</label>
+							<label class="col-md-4 control-label">商品折扣</label>
 							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
+								<input type="text" class="form-control" name="discount" value="{{ old('discount') }}">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Confirm Password</label>
+							<label class="col-md-4 control-label">商品详情</label>
 							<div class="col-md-6">
-								<input type="password" class="form-control" name="password_confirmation">
+								<textarea rows = "5" type="text" class="form-control" name="detail" value="{{ old('detail') }}">
+								</textarea>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">
-									Register
+								加入商品
 								</button>
 							</div>
 						</div>

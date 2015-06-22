@@ -11,14 +11,14 @@
 */
 Route::get('/', 'WelcomeController@index');
 Route::get('newstore','newstoreController@addnewstore');
+Route::resource('/item/new','ItemController@newItem');
+
 Route::get('home', 'HomeController@index');
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
 Route::get('show', 'UserController@show');
-
-
 
 Route::get('user/{name}/{id}', function ($name,$id) {
     try {

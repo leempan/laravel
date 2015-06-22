@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStoreTable extends Migration {
+class CreateItemsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,17 @@ class CreateStoreTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('store', function($table){
+		Schema::create('items', function($table){
         	$table->increments('id');
         	$table->string('name', 100);
-        	$table->integer('market_id');
+        	$table->double('origin_price',15,2);
+        	$table->float('discount');
+        	$table->integer('salenum');
+        	$table->integer('storeId');
         	$table->timestamps();
-        	$table->string('remember_token',62)->default('default');
         });
 	}
-//id name market_id
+
 	/**
 	 * Reverse the migrations.
 	 *
@@ -28,8 +30,7 @@ class CreateStoreTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('store');
-		//
+		Schema::dropIfExists('items');
 	}
 
 }
